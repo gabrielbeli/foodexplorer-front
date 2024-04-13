@@ -28,6 +28,10 @@ export const HeaderContainer = styled.main`
       }
     }
 
+    > .logout {
+      font-size: 3rem;
+    }
+
     > .request {
       text-decoration: none;
     }
@@ -63,26 +67,26 @@ export const HeaderContainer = styled.main`
       gap: 4rem;
       padding-block: 2.4rem;
 
-      > .menuBurger {
+      .menuBurger {
         display: none !important;
-      }
 
-      > .logout {
-        flex-shrink: 0;
-      }
-
-      > .logo {
-        display: grid;
-        grid-template-columns: 3.5rem max-content;
-        row-gap: 0;
-
-        > h1 {
-          font-size: 3rem;
+        > .logout {
+          flex-shrink: 0;
         }
-      }
 
-      .search {
-        display: block;
+        > .logo {
+          display: grid;
+          grid-template-columns: 3.5rem max-content;
+          row-gap: 0;
+
+          > h1 {
+            font-size: 3rem;
+          }
+        }
+
+        .search {
+          display: block;
+        }
       }
     }
   }

@@ -1,14 +1,19 @@
 import { HeaderContainer } from './styles'
+
 import menu from '../../assets/menu.svg'
-import { Link } from 'react-router-dom'
 import logo from '../../assets/logo.svg'
+
 import { Button } from '../Button'
-import { FiShoppingCart, FiLogOut } from 'react-icons/fi'
 import { Search } from '../Search'
+
+import { Menu } from '../Menu'
+
+import { FiShoppingCart, FiLogOut } from 'react-icons/fi'
 import { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom'
 
 export function Header() {
-  const [showSearch, setShowSearch] = useState(true)
+  const [showSearch, setShowSearch] = useState(window.innerWidth > 768)
 
   useEffect(() => {
     const handleResize = () => {
@@ -34,7 +39,9 @@ export function Header() {
             <h1>food explorer</h1>
           </Link>
 
-          {showSearch && <Search className="search" />}
+          {showSearch && window.innerWidth > 768 && (
+            <Search className="search" />
+          )}
 
           <Link className="request">
             <Button
