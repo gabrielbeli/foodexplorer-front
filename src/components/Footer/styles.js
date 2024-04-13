@@ -18,7 +18,7 @@ export const FooterContainer = styled.footer`
 
     > div {
       color: ${(props) => props.theme.LIGHT[700]};
-      font-size: 3rem;
+      font-size: 2.5rem;
       font-weight: 700;
 
       display: flex;

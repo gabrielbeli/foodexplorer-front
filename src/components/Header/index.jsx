@@ -36,8 +36,12 @@ export function Header() {
 
           {showSearch && <Search className="search" />}
 
-          <Link>
-            <Button className="btnRed" title="Pedidos" icon={FiShoppingCart} />
+          <Link className="request">
+            <Button
+              className="btnRed"
+              title={`Pedidos (0)`}
+              icon={FiShoppingCart}
+            />
           </Link>
 
           <FiLogOut className="logout" onClick={''} />

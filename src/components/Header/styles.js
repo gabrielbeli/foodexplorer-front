@@ -28,6 +28,10 @@ export const HeaderContainer = styled.main`
       }
     }
 
+    > .request {
+      text-decoration: none;
+    }
+
     @media (max-width: 768px) {
       padding: 5.6rem 0 2.4rem;
 
@@ -73,7 +77,7 @@ export const HeaderContainer = styled.main`
         row-gap: 0;
 
         > h1 {
-          font-size: 4rem;
+          font-size: 3rem;
         }
       }
 
