@@ -33,7 +33,7 @@ export const FooterContainer = styled.footer`
     }
 
     > p {
-      color: ${(props) => props.theme.LIGHT[200]};
+      color: ${(props) => props.theme.LIGHT[600]};
       font-size: 1.5rem;
     }
 

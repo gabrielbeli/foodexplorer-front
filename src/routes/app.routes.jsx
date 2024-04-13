@@ -4,11 +4,12 @@ import { Home } from '../pages/Home'
 import { Dish } from '../pages/Dish'
 import { NewDish } from '../pages/NewDish'
 import { EditDish } from '../pages/EditDish'
+import { DefaultLayout } from '../styles/DefaultLayout'
 
 export function AppRoutes() {
   return (
     <Routes>
-      <Route path="/">
+      <Route path="/" element={<DefaultLayout />}>
         <Route path="/" element={<Home />} />
         <Route path="/dish" element={<Dish />} />
         <Route path="/newdish" element={<NewDish />} />
