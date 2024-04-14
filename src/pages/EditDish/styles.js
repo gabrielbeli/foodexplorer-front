@@ -49,7 +49,7 @@ export const Form = styled.form`
         background: ${(props) => props.theme.DARK[800]};
 
         padding: 1.2rem 0;
-        border-radius: 0%.8rem;
+        border-radius: 0.8rem;
 
         display: flex;
         flex-direction: row;
@@ -127,7 +127,7 @@ export const Form = styled.form`
 
         min-height: 4.8rem;
         padding: 0.8rem;
-        border-radius: 8px;
+        border-radius: 0.8rem;
 
         display: flex;
         flex-wrap: wrap;
