@@ -1,8 +1,26 @@
+import { HomeContainer, Banner } from './styles'
+import foots100 from '../../assets/foots-100.svg'
+import foots200 from '../../assets/foots-200.svg'
 
 export function Home() {
   return (
-    <div>
-      <h1>Hello World</h1>
-    </div>
+    <HomeContainer>
+      <Banner>
+        <picture>
+          <source media="(max-width: 768px)" srcSet={foots100} />
+          <img src={foots200} alt="imagem de macarrons e frutos vermelhos" />
+        </picture>
+        <div>
+          <h2>Sabores inigualáveis</h2>
+          <p>Sinta o cuidado do preparo com ingredientes selecionados</p>
+        </div>
+      </Banner>
+
+      <main>
+        <section>Refeições</section>
+        <section>Sobremesas</section>
+        <section>Bebidas</section>
+      </main>
+    </HomeContainer>
   )
 }

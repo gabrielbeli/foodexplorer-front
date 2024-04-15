@@ -34,4 +34,21 @@ export default createGlobalStyle`
     color:${(props) => props.theme.LIGHT[300]};
   }
 
+  button:hover, a:hover {
+    filter: brightness(.9);
+  }
+
+  ::-webkit-scrollbar {
+    width: .5rem;
+  }
+
+  ::-webkit-scrollbar-track {
+  background-color: transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    border-radius: .5rem;
+    background-color: ${(props) => props.theme.TINTS.CAKE[100]};
+  }
+
 `
