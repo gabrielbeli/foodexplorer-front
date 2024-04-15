@@ -88,6 +88,10 @@ export const HeaderContainer = styled.main`
           display: block;
         }
       }
+
+      .request {
+        width: 17.5rem;
+      }
     }
   }
 `

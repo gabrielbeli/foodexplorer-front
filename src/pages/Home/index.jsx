@@ -1,6 +1,7 @@
 import { HomeContainer, Banner } from './styles'
 import foots100 from '../../assets/foots-100.svg'
 import foots200 from '../../assets/foots-200.svg'
+import { Card } from '../../components/Card'
 
 export function Home() {
   return (
@@ -17,9 +18,18 @@ export function Home() {
       </Banner>
 
       <main>
-        <section>Refeições</section>
-        <section>Sobremesas</section>
-        <section>Bebidas</section>
+        <section>
+          Refeição
+          <Card />
+        </section>
+        <section>
+          Sobremesas
+          <Card />
+        </section>
+        <section>
+          Bebidas
+          <Card />
+        </section>
       </main>
     </HomeContainer>
   )
