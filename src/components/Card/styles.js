@@ -46,6 +46,7 @@ export const CardContainer = styled.div`
     justify-content: center;
     align-items: center;
     gap: 1.2rem;
+    text-decoration: none;
 
     color: ${({ theme }) => theme.LIGHT[300]};
 

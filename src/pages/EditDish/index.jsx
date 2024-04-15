@@ -3,6 +3,7 @@ import { FiChevronLeft, FiUpload } from 'react-icons/fi'
 
 import { Input } from '../../components/Input'
 import { Button } from '../../components/Button'
+import { AddIngredients } from '../../components/AddIngredients'
 
 export function EditDish() {
   return (
@@ -54,7 +55,7 @@ export function EditDish() {
             <div>
               <label htmlFor="add">Ingredientes</label>
               <div>
-                <Input placeholder="Ingrediente" />
+                <AddIngredients />
               </div>
             </div>
 

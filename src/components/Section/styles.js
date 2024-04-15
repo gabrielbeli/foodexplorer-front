@@ -18,11 +18,7 @@ export const SectionContainer = styled.div`
   .swiper-button-prev {
     width: 7.25rem;
     height: 100%;
-    background: linear-gradient(
-      90deg,
-      rgba(0, 10, 15, 0.272541) 0%,
-      #000a0f 100%
-    );
+    background: ${(props) => props.theme.GRADIENT[100]};
     left: -5px;
     top: 1.375rem;
     transform: matrix(-1, 0, 0, 1, 0, 0);
@@ -31,11 +27,7 @@ export const SectionContainer = styled.div`
   .swiper-button-next {
     width: 7.25rem;
     height: 100%;
-    background: linear-gradient(
-      90deg,
-      rgba(0, 10, 15, 0.272541) 0%,
-      #000a0f 100%
-    );
+    background: ${(props) => props.theme.GRADIENT[100]};
     right: 0;
     top: 1.375rem;
     padding-right: 0.5rem;
@@ -49,12 +41,12 @@ export const SectionContainer = styled.div`
   }
 
   @media (min-width: 769px) {
-    width: min(95%, 1122px);
+    width: 90%;
     margin: 0 auto;
 
     > h2 {
-      font-size: clamp(2.4rem, 1.3294rem + 1.6701vw, 3.2rem);
-      line-height: clamp(2.5rem, -0.1764rem + 4.1754vw, 4.5rem);
+      font-size: 3rem;
+      line-height: 5rem;
     }
 
     .swiper-button-prev::after,
