@@ -63,6 +63,7 @@ export const Form = styled.form`
           font-size: 1.4rem;
           font-weight: 500;
 
+          white-space: nowrap;
           display: flex;
           align-items: center;
           gap: 0.8rem;
