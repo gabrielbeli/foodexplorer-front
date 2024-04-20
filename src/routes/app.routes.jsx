@@ -23,7 +23,9 @@ export function AppRoutes() {
           <Route path="/requests" element={<Requests />} />
 
           {user.isAdmin && <Route path="/newdish" element={<NewDish />} />}
-          {user.isAdmin && <Route path="/editd/:id" element={<EditDish />} />}
+          {user.isAdmin && (
+            <Route path="/editdish/:id" element={<EditDish />} />
+          )}
           {!user.isAdmin && <Route path="/favorites" element={<Favorites />} />}
         </Route>
       </Routes>
