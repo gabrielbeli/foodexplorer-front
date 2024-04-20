@@ -2,8 +2,6 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 
 import { Routes } from './routes'
-import { SignIn } from './pages/SignIn'
-import { SignUp } from './pages/SignUp'
 
 import theme from './styles/theme'
 import { ThemeProvider } from 'styled-components'
