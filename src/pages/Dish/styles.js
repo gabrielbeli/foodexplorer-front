@@ -53,7 +53,8 @@ export const Content = styled.div`
     }
 
     > ul {
-      columns: 3;
+      columns: ${({ numberIngredients }) =>
+        numberIngredients >= 3 ? 3 : numberIngredients};
       text-align: center;
       list-style: none;
       max-width: 30rem;
@@ -72,7 +73,7 @@ export const Content = styled.div`
     > div {
       display: grid;
       justify-items: center;
-      grid-template-columns: 1fr 2fr;
+      grid-template-columns: ${({ isAdmin }) => (isAdmin ? '1fr' : '1fr 2fr')};
       max-width: 30rem;
       margin: 2rem auto;
       gap: 3rem;
@@ -125,7 +126,7 @@ export const Content = styled.div`
         }
 
         > div > a > button {
-          padding-inline: 2.4rem;
+          padding-inline: ${({ isAdmin }) => (isAdmin ? '2.4rem' : '0')};
           width: 17.4rem;
           align-items: flex-start;
         }
