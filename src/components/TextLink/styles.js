@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
 
-export const Container = styled(Link)`
+export const TextContainer = styled(Link)`
   color: ${(props) => props.theme.LIGHT[100]};
 
   font-family: 'Poppins', sans-serif;

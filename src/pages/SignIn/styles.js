@@ -3,6 +3,7 @@ import styled from 'styled-components'
 export const SignInContainer = styled.div`
   min-height: 100vh;
   overflow: hidden;
+
   > h1 {
     color: ${(props) => props.theme.LIGHT[100]};
     font-size: 3.5rem;
@@ -13,6 +14,7 @@ export const SignInContainer = styled.div`
     justify-content: center;
     gap: 2rem;
   }
+
   @media (min-width: 769px) {
     padding: 0 7vw;
     display: flex;
@@ -25,6 +27,7 @@ export const SignInContainer = styled.div`
       font-size: 3.5rem;
     }
   }
+
   @media (max-width: 768px) {
     padding-top: 16vh;
   }
@@ -47,6 +50,12 @@ export const SignInForm = styled.div`
 
   > h2 {
     display: none;
+  }
+
+  > div > input {
+    &:valid {
+      outline: 2px solid ${(props) => props.theme.TINTS.MINT};
+    }
   }
 
   @media (min-width: 769px) {
