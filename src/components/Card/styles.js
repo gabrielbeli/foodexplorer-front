@@ -34,7 +34,7 @@ export const CardContainer = styled.div`
 
       color: ${(props) => props.theme.LIGHT[200]};
 
-      &.fav:hover > path {
+      &.fav > path {
         fill: ${(props) => props.theme.LIGHT[300]};
       }
     }
@@ -48,7 +48,7 @@ export const CardContainer = styled.div`
     gap: 1.2rem;
     text-decoration: none;
 
-    color: ${({ theme }) => theme.LIGHT[300]};
+    color: ${(props) => props.theme.LIGHT[300]};
 
     > img {
       width: 8.8rem;
