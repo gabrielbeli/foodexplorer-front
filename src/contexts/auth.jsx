@@ -1,4 +1,5 @@
 import { createContext, useContext, useEffect, useState } from 'react'
+import { toast } from 'react-toastify'
 
 import { api } from '../services/api'
 
@@ -24,7 +25,13 @@ function AuthProvider({ children }) {
         user,
         token,
       })
-    } catch (error) {}
+    } catch (error) {
+      if (error.response) {
+        toast.error(error.response.data.message)
+      } else {
+        toast.error('Não foi possível entrar')
+      }
+    }
   }
 
   async function signOut() {

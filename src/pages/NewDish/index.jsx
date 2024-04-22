@@ -6,11 +6,13 @@ import { FiChevronLeft, FiUpload } from 'react-icons/fi'
 import { useNavigate } from 'react-router-dom'
 import { useState } from 'react'
 import { useForm } from 'react-hook-form'
+import { toast } from 'react-toastify'
 
 import { Input } from '../../components/Input'
 import { Button } from '../../components/Button'
 import { Select } from '../../components/Select'
 import { AddIngredients } from '../../components/AddIngredients'
+import { TextLink } from '../../components/TextLink'
 
 export function NewDish() {
   const [ingredients, setIngredients] = useState([])
@@ -40,6 +42,8 @@ export function NewDish() {
       const isNewIngredient = !ingredients.includes(newIngredient)
       if (isNewIngredient) {
         setIngredients((prevState) => [...prevState, newIngredient])
+      } else {
+        toast.warn('Ingrediente já Adicionado!')
       }
     }
     setNewIngredient('')
@@ -57,6 +61,19 @@ export function NewDish() {
     const { name, category, price, description } = data
 
     const notANumber = isNaN(price) || price === ''
+    if (!name || price < 0 || notANumber) {
+      return
+    }
+
+    if (newIngredient !== '') {
+      return toast.warn(
+        `Clique no + para adicionar o ingrediente tag: ${newIngredient}. ou limpe o campo!`,
+      )
+    }
+
+    if (ingredients.length === 0) {
+      return toast.warn('Informe ao menos o ingrediente principal do prato!')
+    }
 
     const response = await api.post('/dishes', {
       name,
@@ -74,14 +91,17 @@ export function NewDish() {
 
       await api.patch(`dishes/photo/${id}`, fileUploadForm)
     }
+
+    toast.success('Prato adicionado!')
+    navigate('/')
+    reset()
+    setIngredients([])
   }
 
   return (
     <NewDishContainer>
       <div className="wrapper">
-        <a href="/" to={-1}>
-          <FiChevronLeft /> Voltar
-        </a>
+        <TextLink name="voltar" icon={FiChevronLeft} to={-1} />
       </div>
 
       <main>

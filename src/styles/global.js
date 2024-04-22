@@ -34,6 +34,11 @@ export default createGlobalStyle`
     color:${(props) => props.theme.LIGHT[300]};
   }
 
+  button, a {
+  cursor: pointer;
+  transition: filter .2s;
+  }
+
   button:hover, a:hover {
     filter: brightness(.9);
   }

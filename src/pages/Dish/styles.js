@@ -6,10 +6,6 @@ export const DishContainer = styled.div`
 
     > a {
       font-size: 2rem;
-      color: ${(props) => props.theme.LIGHT[300]};
-      text-decoration: none;
-      display: flex;
-      gap: 1rem;
     }
   }
 `
@@ -30,7 +26,6 @@ export const Content = styled.div`
     display: flex;
     flex-direction: column;
     gap: 2.4rem;
-    /*margin-right: 1rem;*/
 
     > h2,
     > p {
@@ -80,6 +75,11 @@ export const Content = styled.div`
 
       > a {
         width: 100%;
+      }
+
+      > a > button {
+        font-size: 1rem;
+        background: ${(props) => props.theme.TINTS.TOMATO[100]};
         display: flex;
         justify-content: center;
         width: 17.2rem;

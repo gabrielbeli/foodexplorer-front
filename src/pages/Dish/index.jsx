@@ -12,6 +12,7 @@ import placeHolder from '../../assets/photoPlaceholder.png'
 import { Button } from '../../components/Button'
 import { Counter } from '../../components/Counter'
 import { Ingredients } from '../../components/Ingredients'
+import { TextLink } from '../../components/TextLink'
 
 import { useState, useEffect } from 'react'
 import { PurchaseContext } from '../../contexts/purchase'
@@ -62,9 +63,7 @@ export function Dish() {
   return (
     <DishContainer>
       <div className="wrapper">
-        <a href="/" to={-1}>
-          <FiChevronLeft /> Voltar
-        </a>
+        <TextLink name="voltar" icon={FiChevronLeft} to={-1} />
       </div>
 
       <main>

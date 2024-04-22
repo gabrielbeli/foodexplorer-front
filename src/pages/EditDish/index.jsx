@@ -3,6 +3,7 @@ import { api } from '../../services/api'
 import { useNavigate, useParams } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 import { useForm } from 'react-hook-form'
+import { toast } from 'react-toastify'
 
 import { EditDishContainer, Form, Textarea } from './styles'
 import { FiChevronLeft, FiUpload } from 'react-icons/fi'
@@ -11,6 +12,7 @@ import { Input } from '../../components/Input'
 import { Button } from '../../components/Button'
 import { AddIngredients } from '../../components/AddIngredients'
 import { Select } from '../../components/Select'
+import { TextLink } from '../../components/TextLink'
 
 export function EditDish() {
   const [ingredients, setIngredients] = useState([])
@@ -35,6 +37,10 @@ export function EditDish() {
 
     const notANumber = isNaN(price) || price === ''
 
+    if (!name || notANumber) {
+      return toast.warn(`O nome e o preço são obrigatórios.`)
+    }
+
     try {
       await api.put(`/dishes/${id}`, {
         name,
@@ -50,7 +56,17 @@ export function EditDish() {
 
         await api.patch(`dishes/photo/${id}`, fileUploadForm)
       }
-    } catch (error) {}
+
+      toast.success('Prato atualizado!')
+      navigate(-1)
+    } catch (error) {
+      console.error(error)
+      if (error.response) {
+        toast.error(error.response.data.message)
+      } else {
+        toast.error('Não foi possível atualizar!')
+      }
+    }
   }
 
   async function removeDish() {
@@ -66,6 +82,8 @@ export function EditDish() {
       const isNewIngredient = !ingredients.includes(newIngredient)
       if (isNewIngredient) {
         setIngredients((prevState) => [...prevState, newIngredient])
+      } else {
+        toast.warn('Ingrediente já adicionado')
       }
     }
 
@@ -104,9 +122,7 @@ export function EditDish() {
   return (
     <EditDishContainer>
       <div className="wrapper">
-        <a href="/" to={-1}>
-          <FiChevronLeft /> Voltar
-        </a>
+        <TextLink name="voltar" icon={FiChevronLeft} to={-1} />
       </div>
 
       <main>
@@ -183,6 +199,7 @@ export function EditDish() {
               {...register('price')}
             />
           </div>
+
           <div className="textarea">
             <label htmlFor="description">Descrição</label>
             <Textarea
