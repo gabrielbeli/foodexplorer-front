@@ -18,6 +18,10 @@ export const ButtonContainer = styled.main`
 
   cursor: pointer;
 
+  &:hover {
+    filter: brightness(0.9);
+  }
+
   &:disabled {
     opacity: 0.5;
     filter: none;
