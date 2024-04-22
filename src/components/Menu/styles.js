@@ -24,6 +24,10 @@ export const MenuContainer = styled.div`
       font-size: 2.5rem;
       align-items: center;
     }
+
+    > h2 {
+      font-size: 2.1rem;
+    }
   }
 
   > .menu-content {

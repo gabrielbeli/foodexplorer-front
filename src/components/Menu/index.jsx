@@ -1,40 +1,66 @@
-import { MenuContainer } from './styles'
+import { MenuContainer, CloseButton } from './styles'
+
 import { Search } from '../Search'
-import { Link } from 'react-router-dom'
 import { Footer } from '../Footer'
+import { TextLink } from '../TextLink'
 import close from '../../assets/close.svg'
+
+import { useAuth } from '../../contexts/auth'
 import { useState } from 'react'
 
-export function Menu() {
-  const [isOpen, setIsOpen] = useState(true)
+export function Menu({ onCloseMenu, onSetSearch }) {
+  const { user, signOut } = useAuth()
+  const [isOpen, setIsOpen] = useState(false)
+
+  function handleSignOut() {
+    signOut()
+  }
 
   function handleCloseMenu() {
     setIsOpen(false)
+    onCloseMenu()
   }
 
   return (
-    <>
-      {isOpen && (
-        <MenuContainer>
-          <header>
-            <button onClick={handleCloseMenu}>
-              <img src={close} alt="botão para fechar o menu" />
-              Menu
-            </button>
-          </header>
-          <div className="menu-content">
-            <Search />
-            <ul>
+    <MenuContainer $isOpen={isOpen}>
+      <header>
+        <CloseButton onClick={handleCloseMenu}>
+          <img src={close} alt="botão para fechar o menu" />
+        </CloseButton>
+        <h2>Menu</h2>
+      </header>
+      <div className="menu-content">
+        <Search onSetSearch={onSetSearch} />
+        <ul>
+          {user.isAdmin && (
+            <li>
+              <TextLink name="Novo prato" to={'/'} onClick={handleCloseMenu} />
+            </li>
+          )}
+          {!user.isAdmin && (
+            <>
               <li>
-                <Link name="Sair" to={'/'} onClick={''}>
-                  Sair
-                </Link>
+                <TextLink
+                  name="Histórico de pedidos"
+                  to="/requests"
+                  onClick={handleCloseMenu}
+                />
               </li>
-            </ul>
-          </div>
-          <Footer />
-        </MenuContainer>
-      )}
-    </>
+              <li>
+                <TextLink
+                  name="Meus favoritos"
+                  to="/favorites"
+                  onClick={handleCloseMenu}
+                />
+              </li>
+            </>
+          )}
+          <li>
+            <TextLink name="Sair" to={'/'} onClick={handleSignOut} />
+          </li>
+        </ul>
+      </div>
+      <Footer />
+    </MenuContainer>
   )
 }
