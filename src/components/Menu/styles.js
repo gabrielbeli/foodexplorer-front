@@ -67,3 +67,23 @@ export const MenuContainer = styled.div`
     display: none;
   }
 `
+
+export const CloseButton = styled.button`
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  transition: transform 0.2s ease;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+
+  img {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+`

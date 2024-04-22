@@ -61,7 +61,7 @@ export const CardContainer = styled.div`
     }
 
     > span {
-      color: ${({ theme }) => theme.TINTS.CAKE[200]};
+      color: ${(props) => props.theme.TINTS.CAKE[200]};
     }
 
     > h3 {
