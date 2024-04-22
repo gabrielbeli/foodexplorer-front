@@ -8,6 +8,8 @@ import { NewDish } from '../pages/NewDish'
 import { EditDish } from '../pages/EditDish'
 import { Favorites } from '../pages/Favorites'
 import { Requests } from '../pages/Requests'
+import { Payment } from '../pages/Payment'
+import { PaymentOnly } from '../pages/PaymentOnly'
 import { DefaultLayout } from '../styles/DefaultLayout'
 import { PurchaseProvider } from '../contexts/purchase'
 
@@ -27,6 +29,10 @@ export function AppRoutes() {
             <Route path="/editdish/:id" element={<EditDish />} />
           )}
           {!user.isAdmin && <Route path="/favorites" element={<Favorites />} />}
+          {!user.isAdmin && <Route path="/payment" element={<Payment />} />}
+          {!user.isAdmin && (
+            <Route path="/payment-only" element={<PaymentOnly />} />
+          )}
         </Route>
       </Routes>
     </PurchaseProvider>
