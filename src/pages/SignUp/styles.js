@@ -32,7 +32,7 @@ export const SignUpContainer = styled.div`
     padding-top: 16vh;
   }
 `
-export const SignUpForm = styled.div`
+export const Form = styled.form`
   margin: 0 auto;
   padding: 4rem;
   border-radius: 8px;

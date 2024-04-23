@@ -11,6 +11,7 @@ export const TextContainer = styled(Link)`
 
   display: flex;
   align-items: center;
+  text-decoration: none;
 
   &:hover {
     color: ${(props) => props.theme.TINTS.CAKE[200]};

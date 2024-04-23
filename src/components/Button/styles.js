@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-export const ButtonContainer = styled.main`
+export const ButtonContainer = styled.button`
   background: ${(props) => props.theme.TINTS.TOMATO[100]};
   color: ${(props) => props.theme.LIGHT[100]};
   font-family: 'Poppins', sans-serif;
@@ -17,10 +17,6 @@ export const ButtonContainer = styled.main`
   gap: 0.8rem;
 
   cursor: pointer;
-
-  &:hover {
-    filter: brightness(0.9);
-  }
 
   &:disabled {
     opacity: 0.5;
