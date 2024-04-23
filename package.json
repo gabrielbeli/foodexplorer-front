@@ -10,6 +10,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@hookform/resolvers": "^3.3.4",
     "@splidejs/splide": "^4.1.4",
     "axios": "^1.6.8",
     "chroma-js": "^2.4.2",
@@ -25,7 +26,8 @@
     "react-toastify": "^10.0.5",
     "styled-components": "^6.1.8",
     "swiper": "^11.1.1",
-    "use-context-selector": "^1.4.4"
+    "use-context-selector": "^1.4.4",
+    "zod": "^3.23.0"
   },
   "devDependencies": {
     "@rocketseat/eslint-config": "^2.2.2",
