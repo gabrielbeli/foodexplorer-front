@@ -1,6 +1,7 @@
 import styled from 'styled-components'
+import * as Dialog from '@radix-ui/react-dialog'
 
-export const MenuContainer = styled.div`
+export const MenuContent = styled(Dialog.Content)`
   background: ${(props) => props.theme.DARK[400]};
   height: 100vh;
   position: fixed;
@@ -17,16 +18,10 @@ export const MenuContainer = styled.div`
 
     button {
       background: transparent;
-      border: none;
-      color: ${(props) => props.theme.LIGHT[300]};
-      display: flex;
-      gap: 2rem;
-      font-size: 2.5rem;
-      align-items: center;
     }
 
     > h2 {
-      font-size: 2.1rem;
+      font-size: 2.5rem;
     }
   }
 
@@ -65,25 +60,5 @@ export const MenuContainer = styled.div`
 
   @media (min-width: 768px) {
     display: none;
-  }
-`
-
-export const CloseButton = styled.button`
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: 0.5rem;
-  transition: transform 0.2s ease;
-
-  &:hover {
-    transform: scale(1.1);
-  }
-
-  img {
-    width: 1.5rem;
-    height: 1.5rem;
   }
 `

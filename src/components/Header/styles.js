@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-export const HeaderContainer = styled.main`
+export const HeaderContainer = styled.header`
   grid-area: header;
   background: ${(props) => props.theme.DARK[700]};
   color: ${(props) => props.theme.LIGHT[100]};
@@ -15,7 +15,12 @@ export const HeaderContainer = styled.main`
     display: flex;
     align-items: center;
 
-    > .logo {
+    > h2 {
+      margin-left: 1.6rem;
+      font-size: 2.1rem;
+    }
+
+    > #logo {
       display: flex;
       align-items: center;
       gap: 2rem;
@@ -33,19 +38,15 @@ export const HeaderContainer = styled.main`
       }
     }
 
-    > .logout {
-      font-size: 3rem;
-    }
-
-    > .request {
-      text-decoration: none;
-    }
-
     @media (max-width: 768px) {
       padding: 5.6rem 0 2.4rem;
 
       > button {
         background-color: transparent;
+      }
+
+      > #logo > img {
+        width: 2.5rem;
       }
 
       #receipt {
@@ -78,23 +79,17 @@ export const HeaderContainer = styled.main`
         }
       }
 
-      .search {
+      #search {
         margin: 0 auto;
+      }
+
+      > #logout,
+      #search,
+      > #new,
+      #btnRed,
+      #historic,
+      #fav {
         display: none;
-      }
-
-      .menuBurger {
-        display: block;
-        border: none;
-      }
-
-      .logo > img {
-        width: 3rem;
-      }
-
-      > .logout,
-      .btnRed {
-        display: none !important;
       }
     }
 
@@ -102,12 +97,12 @@ export const HeaderContainer = styled.main`
       gap: 4rem;
       padding-block: 2.4rem;
 
-      .menuBurger,
+      > #menuBurger,
       > a:has(#receipt) {
         display: none !important;
       }
 
-      > .logout {
+      > #logout {
         flex-shrink: 0;
       }
 
@@ -121,7 +116,7 @@ export const HeaderContainer = styled.main`
         flex-shrink: 0;
       }
 
-      > .logo {
+      > #logo {
         display: grid;
         grid-template-columns: 3.5rem max-content;
         row-gap: 0;
@@ -136,14 +131,10 @@ export const HeaderContainer = styled.main`
         }
       }
 
-      .search {
-        display: block;
-      }
-
-      .request {
+      > a#request {
         width: 17.5rem;
 
-        > .btnRed {
+        > button#btnRed {
           padding-inline: 0;
           min-width: ${({ isAdmin }) => (isAdmin ? '12rem' : '7rem')};
         }
@@ -155,8 +146,9 @@ export const HeaderContainer = styled.main`
         cursor: pointer;
       }
     }
+
     @media (max-width: 769px) and (max-width: 810px) {
-      > .logo {
+      > #logo {
         max-width: 8rem;
         > h1 {
           display: none;
@@ -165,7 +157,7 @@ export const HeaderContainer = styled.main`
     }
 
     @media (max-width: 1028px) {
-      .buttons {
+      #buttons {
         flex-direction: column;
         align-items: center;
         gap: 0.3rem;

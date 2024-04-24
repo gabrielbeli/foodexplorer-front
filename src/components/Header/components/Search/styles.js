@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 export const SearchContainer = styled.div`
   background: ${(props) => props.theme.DARK[900]};
-  border-radius: 8px;
+  border-radius: 5px;
   display: flex;
   align-items: center;
   flex: 2;

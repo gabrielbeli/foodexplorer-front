@@ -5,10 +5,16 @@ export default createGlobalStyle`
     font-size: 62.5%;
   }
 
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
   * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    font: inherit;
   }
 
   img, svg {
@@ -32,6 +38,10 @@ export default createGlobalStyle`
 
     background-color: ${(props) => props.theme.DARK[400]};
     color:${(props) => props.theme.LIGHT[300]};
+  }
+
+  a {
+    text-decoration: none;
   }
 
   button, a {

@@ -1,5 +1,5 @@
 import { FiSearch } from 'react-icons/fi'
-import { Input } from '../Input'
+import { Input } from '../../../Input'
 import { useLocation } from 'react-router-dom'
 import { SearchContainer } from './styles'
 

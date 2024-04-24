@@ -8,17 +8,17 @@ import menu from '../../assets/menu.svg'
 import logo from '../../assets/logo.svg'
 
 import { Button } from '../Button'
-import { Search } from '../Search'
-import { Menu } from '../Menu'
+import { Search } from './components/Search'
+import { Menu } from './components/Menu'
 import { TextLink } from '../TextLink'
 
 import { FiShoppingCart, FiLogOut } from 'react-icons/fi'
 import { PiReceiptThin } from 'react-icons/pi'
 import { useState, useEffect } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
+import * as Dialog from '@radix-ui/react-dialog'
 
 export function Header({ onSetSearch }) {
-  const [showSearch, setShowSearch] = useState(window.innerWidth > 768)
   const [open, setOpen] = useState(false)
   const [totalItems, setTotalItems] = useState(0)
 
@@ -32,18 +32,6 @@ export function Header({ onSetSearch }) {
   const purchasesPending = userPurchases.filter(
     (purchase) => purchase.status === 'pending',
   )
-
-  useEffect(() => {
-    const handleResize = () => {
-      setShowSearch(window.innerWidth > 768)
-    }
-
-    window.addEventListener('resize', handleResize)
-
-    return () => {
-      window.removeEventListener('resize', handleResize)
-    }
-  }, [])
 
   function handleCloseMenu() {
     setOpen(false)
@@ -66,20 +54,22 @@ export function Header({ onSetSearch }) {
   return (
     <HeaderContainer $isAdmin={user.isAdmin}>
       <header>
-        <button className="menuBurger" onClick={() => setOpen(!open)}>
-          <img src={menu} alt="menu hamburger" />
-        </button>
-        <Menu onCloseMenu={handleCloseMenu} onSetSearch={onSetSearch} />
+        <Dialog.Root open={open} onOpenChange={() => setOpen(!open)}>
+          <Dialog.Trigger asChild>
+            <button id="menuBurger">
+              <img src={menu} alt="menu hamburger" />
+            </button>
+          </Dialog.Trigger>
+          <Menu onCloseMenu={handleCloseMenu} onSetSearch={onSetSearch} />
+        </Dialog.Root>
         <>
-          <Link className="logo" to="/">
+          <Link id="logo" to="/">
             <img src={logo} alt="Logo foodExplorer" />
             <h1>food explorer</h1>
             {user.isAdmin && <span>admin</span>}
           </Link>
 
-          {showSearch && (
-            <Search onSetSearch={onSetSearch} className="search" />
-          )}
+          <Search onSetSearch={onSetSearch} id="search" />
 
           {!user.isAdmin && (
             <div id="buttons">
@@ -91,14 +81,13 @@ export function Header({ onSetSearch }) {
               <TextLink name="Meus favoritos" to="/favorites" id="fav" />
             </div>
           )}
-          {user.isAdmin && <TextLink name="Novo prato" to="/new" id="new" />}
+          {user.isAdmin && (
+            <TextLink name="Novo prato" to="/newdish" id="new" />
+          )}
 
-          <Link
-            className="request"
-            to={user.isAdmin ? '/requests' : '/payment'}
-          >
+          <Link id="request" to={user.isAdmin ? '/requests' : '/payment'}>
             <Button
-              className="btnRed"
+              id="btnRed"
               title={
                 user.isAdmin
                   ? `Pedidos (${purchasesPending.length})`
@@ -108,7 +97,7 @@ export function Header({ onSetSearch }) {
             />
           </Link>
 
-          <FiLogOut className="logout" onClick={handleSignOut} />
+          <FiLogOut id="logout" onClick={handleSignOut} />
           <Link to={user.isAdmin ? '/requests' : '/payment'}>
             <button id="receipt">
               {user.isAdmin ? <PiReceiptThin /> : <FiShoppingCart />}
