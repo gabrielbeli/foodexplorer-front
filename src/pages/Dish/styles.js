@@ -42,7 +42,7 @@ export const Content = styled.div`
     > p {
       font-size: 2rem;
       line-height: 2.2rem;
-      max-width: 30rem;
+      max-width: 30ch;
       margin: 0 auto;
       text-align: justify;
     }
@@ -51,10 +51,7 @@ export const Content = styled.div`
       columns: ${({ numberIngredients }) =>
         numberIngredients >= 3 ? 3 : numberIngredients};
       text-align: center;
-      list-style: none;
-      max-width: 30rem;
-      margin: 0 auto;
-      gap: 4rem;
+      gap: 1rem;
 
       > li {
         margin-bottom: 1rem;
@@ -69,9 +66,8 @@ export const Content = styled.div`
       display: grid;
       justify-items: center;
       grid-template-columns: ${({ isAdmin }) => (isAdmin ? '1fr' : '1fr 2fr')};
-      max-width: 30rem;
-      margin: 2rem auto;
       gap: 3rem;
+      margin-top: 2rem;
 
       > a {
         width: 100%;
@@ -80,56 +76,57 @@ export const Content = styled.div`
       > a > button {
         font-size: 1rem;
         background: ${(props) => props.theme.TINTS.TOMATO[100]};
-        display: flex;
-        justify-content: center;
-        width: 17.2rem;
-        margin: 0 auto;
       }
+      display: flex;
+      justify-content: center;
+      width: 17.2rem;
+      margin: 0 auto;
+    }
+  }
+
+  @media (min-width: 769px) {
+    flex-direction: row;
+    gap: 6rem;
+
+    > img {
+      width: 32rem;
+      height: 32rem;
     }
 
-    @media (min-width: 769px) {
-      flex-direction: row;
-      gap: 6rem;
+    > div {
+      width: fit-content;
+      align-items: flex-start;
+      align-self: center;
+      max-width: 666px;
+      padding-right: 4rem;
 
-      > img {
-        width: 60rem;
-        height: 60rem;
+      > h2 {
+        font-size: 4rem;
+        margin: 0;
       }
 
-      > div {
-        width: fit-content;
+      > p {
+        text-align: justify;
+        font-size: 2.5rem;
+        line-height: 3rem;
+        max-width: none;
+      }
+
+      > ul {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1.2rem;
+
+        > li {
+          margin-bottom: 0;
+        }
+      }
+
+      > div > a > button {
+        padding-inline: ${({ isAdmin }) => (isAdmin ? '2.4rem' : '0')};
+        width: 17.4rem;
         align-items: flex-start;
-        align-self: center;
-        max-width: 666px;
-        padding-right: 4rem;
-
-        > h2 {
-          font-size: 6rem;
-          margin: 0;
-        }
-
-        > p {
-          text-align: justify;
-          font-size: 4rem;
-          line-height: 3rem;
-          max-width: none;
-        }
-
-        > ul {
-          display: flex;
-          flex-wrap: wrap;
-          gap: 1rem;
-
-          > li {
-            margin-bottom: 0;
-          }
-        }
-
-        > div > a > button {
-          padding-inline: ${({ isAdmin }) => (isAdmin ? '2.4rem' : '0')};
-          width: 17.4rem;
-          align-items: flex-start;
-        }
+        font-size: 1.5rem;
       }
     }
   }

@@ -11,7 +11,6 @@ export const CounterContainer = styled.main`
   button {
     background: transparent;
     width: 2rem;
-    border: none;
 
     svg {
       font-size: 2.4rem;

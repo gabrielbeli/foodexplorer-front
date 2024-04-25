@@ -138,7 +138,7 @@ export function NewDish() {
               <label htmlFor="category">Categoria</label>
               <Select id="category" {...register('category')}>
                 <option value="meal">Refeição</option>
-                <option value="desserts">Sobremesa</option>
+                <option value="dessert">Sobremesa</option>
                 <option value="drink">Bebida</option>
               </Select>
             </div>
@@ -193,7 +193,7 @@ export function NewDish() {
               type="button"
               id="buttonAdd"
               title="Adicionar prato"
-              onClick={isSubmitting}
+              onClick={handleSubmit(handleCreateNewDishForm)}
             />
           </div>
         </Form>

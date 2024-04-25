@@ -86,7 +86,7 @@ export function Card({ dish }) {
     <CardContainer $inCart={inCart}>
       {user.isAdmin ? (
         <button>
-          <Link to={`/edit/${dish.id}`}>
+          <Link to={`/editdish/${dish.id}`}>
             <img src={Edit} alt="" />
           </Link>
         </button>

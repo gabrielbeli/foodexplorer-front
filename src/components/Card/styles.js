@@ -119,6 +119,8 @@ export const CardContainer = styled.div`
         overflow: hidden;
         display: -webkit-box;
         max-height: 4.4rem;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
       }
 
       > span {
