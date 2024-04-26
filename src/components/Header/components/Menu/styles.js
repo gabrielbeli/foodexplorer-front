@@ -8,6 +8,10 @@ export const MenuContent = styled(Dialog.Content)`
   inset: 0;
   z-index: 3;
 
+  .hide {
+    display: none !important;
+  }
+
   > header {
     background: ${(props) => props.theme.DARK[700]};
     padding: 6rem 2.8rem 2.8rem;
@@ -45,7 +49,7 @@ export const MenuContent = styled(Dialog.Content)`
 
         > a {
           width: fit-content;
-          font-size: 3rem;
+          font-size: 2rem;
           font-weight: 300;
           padding: 1rem;
           text-decoration: none;

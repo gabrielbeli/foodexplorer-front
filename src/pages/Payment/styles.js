@@ -9,7 +9,7 @@ export const PayContainer = styled.main`
   h1 {
     font-family: 'Poppins', sans-serif;
     font-weight: 500;
-    font-size: 3rem;
+    font-size: 2.5rem;
     line-height: 4.5rem;
 
     margin-bottom: 3.2rem;

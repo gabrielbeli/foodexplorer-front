@@ -3,10 +3,10 @@ import styled from 'styled-components'
 export const FavoritesContainer = styled.main`
   padding: 4rem 5rem 4rem 5rem;
 
-  > h1 {
+  > h2 {
     font-family: 'Poppins', sans-serif;
     font-weight: 500;
-    font-size: 4rem;
+    font-size: 2rem;
     line-height: 4.5rem;
 
     margin-bottom: 3.2rem;

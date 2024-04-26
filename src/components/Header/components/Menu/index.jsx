@@ -16,55 +16,53 @@ export function Menu({ onCloseMenu, onSetSearch }) {
   }
 
   return (
-    <Dialog.Root>
-      <Dialog.Portal>
-        <MenuContent>
-          <header>
-            <Dialog.Close asChild>
-              <button>
-                <img src={close} alt="botão para fechar o menu" />
-              </button>
-            </Dialog.Close>
-            <Dialog.Title>Menu</Dialog.Title>
-          </header>
-          <div className="menu-content">
-            <Search onSetSearch={onSetSearch} />
-            <ul>
-              {user.isAdmin && (
+    <Dialog.Portal>
+      <MenuContent>
+        <header>
+          <Dialog.Close asChild>
+            <button>
+              <img src={close} alt="botão para fechar o menu" />
+            </button>
+          </Dialog.Close>
+          <Dialog.Title>Menu</Dialog.Title>
+        </header>
+        <div className="menu-content">
+          <Search isEnabled onSetSearch={onSetSearch} />
+          <ul>
+            {user.isAdmin && (
+              <li>
+                <TextLink
+                  name="Novo prato"
+                  to="/newdish"
+                  onClick={onCloseMenu}
+                />
+              </li>
+            )}
+            {!user.isAdmin && (
+              <>
                 <li>
                   <TextLink
-                    name="Novo prato"
-                    to="/newdish"
+                    name="Histórico de pedidos"
+                    to="/requests"
                     onClick={onCloseMenu}
                   />
                 </li>
-              )}
-              {!user.isAdmin && (
-                <>
-                  <li>
-                    <TextLink
-                      name="Histórico de pedidos"
-                      to="/requests"
-                      onClick={onCloseMenu}
-                    />
-                  </li>
-                  <li>
-                    <TextLink
-                      name="Meus favoritos"
-                      to="/favorites"
-                      onClick={onCloseMenu}
-                    />
-                  </li>
-                </>
-              )}
-              <li>
-                <TextLink name="Sair" to={'/'} onClick={handleSignOut} />
-              </li>
-            </ul>
-          </div>
-          <Footer />
-        </MenuContent>
-      </Dialog.Portal>
-    </Dialog.Root>
+                <li>
+                  <TextLink
+                    name="Meus favoritos"
+                    to="/favorites"
+                    onClick={onCloseMenu}
+                  />
+                </li>
+              </>
+            )}
+            <li>
+              <TextLink name="Sair" to={'/'} onClick={handleSignOut} />
+            </li>
+          </ul>
+        </div>
+        <Footer />
+      </MenuContent>
+    </Dialog.Portal>
   )
 }

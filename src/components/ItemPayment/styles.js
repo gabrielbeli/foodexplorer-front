@@ -1,8 +1,8 @@
 import styled from 'styled-components'
 
 export const PaymentContainer = styled.div`
-  max-width: 53rem;
-  height: 41.3rem;
+  max-width: 50rem;
+  height: 40rem;
 
   border: 1px solid ${(props) => props.theme.LIGHT[600]};
   border-radius: 0.8rem;

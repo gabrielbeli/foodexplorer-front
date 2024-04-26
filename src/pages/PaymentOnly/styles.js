@@ -4,7 +4,7 @@ export const PayOnlyContainer = styled.div`
   > .wrapper {
     padding: 3rem;
     > a {
-      font-size: 2.5rem;
+      font-size: 2rem;
     }
   }
 `
