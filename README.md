@@ -26,11 +26,10 @@ Os usuários podem se cadastrar e fazer login, favoritar refeições, adicionar 
 ## 💻 Projeto
 
 ## Usuário Admin na versão desktop
-![desktop user](https://github.com/gabrielbeli/foodexplorer-front/assets/145936985/4a3d4ae4-8f10-4b60-9acc-647821505f1b)
+![desktop user](https://github.com/gabrielbeli/foodexplorer-front/assets/145936985/b76f3106-ef97-49eb-a993-66a40f4781c5)
 
 ## Usuário comum na versão mobile
-![User mobile](https://github.com/gabrielbeli/foodexplorer-front/assets/145936985/8cccaf18-f40d-412c-9b7c-731e3f1678b5)
-
+![mobile user](https://github.com/gabrielbeli/foodexplorer-front/assets/145936985/320858c1-3956-4d97-a348-308a245d7647)
 
 ## 🤖 Tecnologias
 
