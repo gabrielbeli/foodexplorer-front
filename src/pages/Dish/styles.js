@@ -35,7 +35,7 @@ export const Content = styled.div`
 
     > h2 {
       font-weight: 500;
-      font-size: 4rem;
+      font-size: 3rem;
       margin-top: 1.6rem;
     }
 
@@ -101,13 +101,13 @@ export const Content = styled.div`
       padding-right: 4rem;
 
       > h2 {
-        font-size: 4rem;
+        font-size: 3rem;
         margin: 0;
       }
 
       > p {
         text-align: justify;
-        font-size: 2.5rem;
+        font-size: 2rem;
         line-height: 3rem;
         max-width: none;
       }
