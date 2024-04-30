@@ -11,8 +11,7 @@ Os usuários podem se cadastrar e fazer login, favoritar refeições, adicionar 
   <a href="#-projeto">Projeto</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#-tecnologias">Tecnologias</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#-instruções">Instruções</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#-layout">Layout</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="https://github.com/gabrielbeli/foodexplorer-backend">Back-end</a>&nbsp;&nbsp;&nbsp;
+  <a href="https://github.com/gabrielbeli/api-foodexplorer">Back-end</a>&nbsp;&nbsp;&nbsp;
 </p>
 
 <br>
